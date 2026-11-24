@@ -1,4 +1,4 @@
-const V="hy-faca773624";
+const V="hy-c417179bdc";
 self.addEventListener("install",e=>{self.skipWaiting();});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener("fetch",e=>{const r=e.request; if(r.method!=="GET"||r.cache==="no-store"||r.headers.has("range")||/\.(mp4|mov|webm)(\?|$)/.test(r.url)) return;
